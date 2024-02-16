@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MazeGame();
+    return MaterialApp(
+      home: MazeGame(),
+    );
   }
 }
