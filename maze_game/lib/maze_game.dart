@@ -9,11 +9,13 @@ class MazeGame extends StatefulWidget {
 
 class _MazeGameState extends State<MazeGame> {
   List<List<bool>> maze = [
-    [true, true, true, true, true],
-    [true, false, false, false, true],
-    [true, true, true, false, true],
-    [true, false, true, false, true],
-    [true, true, true, true, true],
+    [true, true, true, true, true, false, true],
+    [true, true, true, true, true, false, true],
+    [true, false, false, false, true, false, true],
+    [true, false, true, false, false, false, true],
+    [true, false, false, true, true, true, true],
+    [true, true, false, true, true, true, true],
+    [true, true, false, true, true, true, true],
   ];
 
   @override
