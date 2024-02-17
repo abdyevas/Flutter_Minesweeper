@@ -8,11 +8,43 @@ class MazeGame extends StatefulWidget {
 }
 
 class _MazeGameState extends State<MazeGame> {
+  List<List<bool>> maze = [
+    [true, true, true, true, true],
+    [true, false, false, false, true],
+    [true, true, true, false, true],
+    [true, false, true, false, true],
+    [true, true, true, true, true],
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Maze Game'),
+        title: Text('Maze Game'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            maze.length,
+            (rowIndex) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  maze[rowIndex].length,
+                  (colIndex) {
+                    return Container(
+                      width: 50,
+                      height: 50,
+                      color:
+                          maze[rowIndex][colIndex] ? Colors.blue : Colors.black,
+                    );
+                  },
+                ),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
