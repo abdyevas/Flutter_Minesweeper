@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maze_game/maze_game.dart';
+import 'package:maze_game/minesweeper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MazeGame(),
+    return const MaterialApp(
+      home: Minesweeper(),
     );
   }
 }
