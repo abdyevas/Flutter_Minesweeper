@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class Minesweeper extends StatefulWidget {
   const Minesweeper({super.key});
@@ -9,7 +10,8 @@ class Minesweeper extends StatefulWidget {
 
 class _MinesweeperState extends State<Minesweeper> {
   List<List<bool>> board = [];
-
+  int numMines = 20;
+  
   @override
   void initState() {
     super.initState();
@@ -60,6 +62,15 @@ class _MinesweeperState extends State<Minesweeper> {
   void initializeBoard() {
     for (int i = 0; i < 10; i++) {
       board.add(List.generate(10, (j) => true));
+    }
+  }
+
+  void placeMines() {
+    int minesPlaced = 0;
+    Random random = Random();
+
+    while(minesPlaced < numMines) {
+
     }
   }
 }
