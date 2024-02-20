@@ -63,6 +63,7 @@ class _MinesweeperState extends State<Minesweeper> {
     for (int i = 0; i < 10; i++) {
       board.add(List.generate(10, (j) => true));
     }
+    placeMines();
   }
 
   void placeMines() {
@@ -70,7 +71,13 @@ class _MinesweeperState extends State<Minesweeper> {
     Random random = Random();
 
     while(minesPlaced < numMines) {
+      int i = random.nextInt(10);
+      int j = random.nextInt(10);
 
+      if (!board[i][j]) {
+        board[i][j] = true;
+        minesPlaced++;
+      }
     }
   }
 }
