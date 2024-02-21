@@ -44,8 +44,8 @@ class _MinesweeperState extends State<Minesweeper> {
                         decoration: BoxDecoration(
                           border: Border.all(color: const Color.fromARGB(255, 54, 54, 54)),
                           color: board[rowIndex][colIndex]
-                              ? Colors.grey 
-                              : Colors.white, 
+                              ? const Color.fromARGB(255, 8, 29, 58) 
+                              : const Color.fromARGB(255, 78, 110, 167), 
                         ),
                       ),
                     );
@@ -80,4 +80,8 @@ class _MinesweeperState extends State<Minesweeper> {
       }
     }
   }
+
+  void calculateNeighbors() {
+
+  } 
 }
