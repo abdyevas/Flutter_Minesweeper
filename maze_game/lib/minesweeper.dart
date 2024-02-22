@@ -82,6 +82,20 @@ class _MinesweeperState extends State<Minesweeper> {
   }
 
   void calculateNeighbors() {
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        if (!board[i][j]) {
+          int minesCount = 0;
 
+          for (int x = -1; x <= 1; x++) {
+            for (int y = -1; y <= 1; y++) {
+              if (!board[x][y]) {
+                minesCount++;
+              }
+            }
+          }
+        }
+      }
+    }
   } 
 }
