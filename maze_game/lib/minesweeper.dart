@@ -89,6 +89,9 @@ class _MinesweeperState extends State<Minesweeper> {
 
           for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
+              int neighborRow = i + x; 
+              int neighborCol = j + y; 
+              
               if (!board[x][y]) {
                 minesCount++;
               }
