@@ -92,11 +92,14 @@ class _MinesweeperState extends State<Minesweeper> {
               int neighborRow = i + x; 
               int neighborCol = j + y; 
               
-              if (!board[x][y]) {
+              if (neighborRow >= 0 && neighborRow < 10
+                && neighborCol >= 0 && neighborCol < 10
+                && board[neighborRow][neighborCol]) {
                 minesCount++;
               }
             }
           }
+          board[i][j] = minesCount;
         }
       }
     }
