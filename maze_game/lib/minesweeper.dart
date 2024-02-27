@@ -9,13 +9,15 @@ class Minesweeper extends StatefulWidget {
 }
 
 class _MinesweeperState extends State<Minesweeper> {
-  List<List<bool>> board = [];
+  List<List<dynamic>> board = [];
   int numMines = 20;
   
   @override
   void initState() {
     super.initState();
     initializeBoard();
+    placeMines();
+    calculateNeighbors();
   }
 
   @override
@@ -61,7 +63,7 @@ class _MinesweeperState extends State<Minesweeper> {
 
   void initializeBoard() {
     for (int i = 0; i < 10; i++) {
-      board.add(List.generate(10, (j) => true));
+      board.add(List.generate(10, (j) => false));
     }
     placeMines();
   }
