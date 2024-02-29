@@ -9,9 +9,9 @@ class Minesweeper extends StatefulWidget {
 }
 
 class _MinesweeperState extends State<Minesweeper> {
-  List<List<dynamic>> board = [];
+  List<List<int>> board = [];
   int numMines = 20;
-  
+
   @override
   void initState() {
     super.initState();
@@ -44,10 +44,16 @@ class _MinesweeperState extends State<Minesweeper> {
                         height: 30,
                         margin: const EdgeInsets.all(1),
                         decoration: BoxDecoration(
-                          border: Border.all(color: const Color.fromARGB(255, 54, 54, 54)),
-                          color: board[rowIndex][colIndex]
-                              ? const Color.fromARGB(255, 8, 29, 58) 
-                              : const Color.fromARGB(255, 78, 110, 167), 
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 54, 54, 54)),
+                          color: board[rowIndex][colIndex] == -1
+                              ? const Color.fromARGB(255, 8, 29, 58)
+                              : const Color.fromARGB(255, 78, 110, 167),
+                        ),
+                        child: Center(
+                          child: Text(
+                            board[rowIndex][colIndex].toString(),
+                          ),
                         ),
                       ),
                     );
@@ -63,40 +69,42 @@ class _MinesweeperState extends State<Minesweeper> {
 
   void initializeBoard() {
     for (int i = 0; i < 10; i++) {
-      board.add(List.generate(10, (j) => false));
+      board.add(List.generate(10, (j) => 0));
     }
-    placeMines();
   }
 
   void placeMines() {
     int minesPlaced = 0;
     Random random = Random();
 
-    while(minesPlaced < numMines) {
+    while (minesPlaced < numMines) {
       int i = random.nextInt(10);
       int j = random.nextInt(10);
 
-      if (!board[i][j]) {
-        board[i][j] = true;
+      if (board[i][j] == 0) {
+        board[i][j] = -1;
         minesPlaced++;
       }
+      print(minesPlaced);
     }
   }
 
   void calculateNeighbors() {
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        if (!board[i][j]) {
+        if (board[i][j] == 0) {
           int minesCount = 0;
 
           for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
-              int neighborRow = i + x; 
-              int neighborCol = j + y; 
-              
-              if (neighborRow >= 0 && neighborRow < 10
-                && neighborCol >= 0 && neighborCol < 10
-                && board[neighborRow][neighborCol]) {
+              int neighborRow = i + x;
+              int neighborCol = j + y;
+
+              if (neighborRow >= 0 &&
+                  neighborRow < 10 &&
+                  neighborCol >= 0 &&
+                  neighborCol < 10 &&
+                  board[neighborRow][neighborCol] == -1) {
                 minesCount++;
               }
             }
@@ -105,5 +113,5 @@ class _MinesweeperState extends State<Minesweeper> {
         }
       }
     }
-  } 
+  }
 }
