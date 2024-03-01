@@ -50,11 +50,6 @@ class _MinesweeperState extends State<Minesweeper> {
                               ? const Color.fromARGB(255, 8, 29, 58)
                               : const Color.fromARGB(255, 78, 110, 167),
                         ),
-                        child: Center(
-                          child: Text(
-                            board[rowIndex][colIndex].toString(),
-                          ),
-                        ),
                       ),
                     );
                   },
@@ -85,7 +80,6 @@ class _MinesweeperState extends State<Minesweeper> {
         board[i][j] = -1;
         minesPlaced++;
       }
-      print(minesPlaced);
     }
   }
 
