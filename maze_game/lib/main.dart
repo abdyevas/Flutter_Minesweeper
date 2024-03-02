@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maze_game/minesweeper.dart';
+import 'package:maze_game/screens/minesweeper.dart';
 
 void main() {
   runApp(const MyApp());
