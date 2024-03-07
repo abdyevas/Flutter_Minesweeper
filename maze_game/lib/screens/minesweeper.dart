@@ -38,7 +38,9 @@ class _MinesweeperState extends State<Minesweeper> {
                   board[rowIndex].length,
                   (colIndex) {
                     return GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        revealCell(rowIndex, colIndex);
+                      },
                       child: Container(
                         width: 30,
                         height: 30,
@@ -107,5 +109,11 @@ class _MinesweeperState extends State<Minesweeper> {
         }
       }
     }
+  }
+
+  void revealCell(int rowIndex, int colIndex) {
+    setState(() {
+      
+    });
   }
 }
