@@ -1,4 +1,4 @@
-# maze_game
+# minesweeper
 
 A new Flutter project.
 
