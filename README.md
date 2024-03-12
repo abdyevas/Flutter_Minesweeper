@@ -1,1 +1,1 @@
-# Flutter_Maze_Game
+# Flutter_Minesweeper
