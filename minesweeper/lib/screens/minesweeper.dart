@@ -53,6 +53,8 @@ class _MinesweeperState extends State<Minesweeper> {
                               ? const Color.fromARGB(255, 8, 29, 58)
                               : const Color.fromARGB(255, 78, 110, 167),
                         ),
+                        // add child with icon or number 
+                        // add list of revealed cells with bool type
                       ),
                     );
                   },
