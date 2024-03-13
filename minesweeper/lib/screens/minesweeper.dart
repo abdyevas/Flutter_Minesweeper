@@ -53,7 +53,20 @@ class _MinesweeperState extends State<Minesweeper> {
                               ? const Color.fromARGB(255, 8, 29, 58)
                               : const Color.fromARGB(255, 78, 110, 167),
                         ),
-                        // add child with icon or number 
+                        child: Center(
+                          child: board[rowIndex][colIndex] > 0
+                          ? Text(
+                            board[rowIndex][colIndex].toString(),
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
+                          )
+                          : Image.asset(
+                            'assets/images/mine_icon.png',
+                            width: 20,
+                            height: 20,
+                          ),
+                        ),
                         // add list of revealed cells with bool type
                       ),
                     );
