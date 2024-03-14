@@ -10,8 +10,8 @@ class Minesweeper extends StatefulWidget {
 
 class _MinesweeperState extends State<Minesweeper> {
   List<List<int>> board = [];
+  List<List<bool>> revealed = [];
   int numMines = 20;
-  bool isOpen = false;
 
   @override
   void initState() {
@@ -49,12 +49,12 @@ class _MinesweeperState extends State<Minesweeper> {
                         decoration: BoxDecoration(
                           border: Border.all(
                               color: const Color.fromARGB(255, 54, 54, 54)),
-                          color: isOpen
+                          color: revealed[rowIndex][colIndex]
                               ? const Color.fromARGB(255, 8, 29, 58)
                               : const Color.fromARGB(255, 78, 110, 167),
                         ),
                         child: Center(
-                          child: board[rowIndex][colIndex] > 0
+                          child: board[rowIndex][colIndex] > -1
                           ? Text(
                             board[rowIndex][colIndex].toString(),
                             style: const TextStyle(
@@ -67,7 +67,6 @@ class _MinesweeperState extends State<Minesweeper> {
                             height: 20,
                           ),
                         ),
-                        // add list of revealed cells with bool type
                       ),
                     );
                   },
@@ -83,6 +82,7 @@ class _MinesweeperState extends State<Minesweeper> {
   void initializeBoard() {
     for (int i = 0; i < 10; i++) {
       board.add(List.generate(10, (j) => 0));
+      revealed.add(List.generate(10, (j) => false));
     }
   }
 
@@ -129,7 +129,7 @@ class _MinesweeperState extends State<Minesweeper> {
 
   void revealCell(int rowIndex, int colIndex) {
     setState(() {
-      isOpen = true;
+      revealed[rowIndex][colIndex] = true;      
     });
   }
 }
