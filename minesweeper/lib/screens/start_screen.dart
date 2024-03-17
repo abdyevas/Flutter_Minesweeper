@@ -5,25 +5,36 @@ class StartScreen extends StatefulWidget {
 
   final void Function(bool isOnePlayer) switchScreen;
 
-@override
+  @override
   State<StartScreen> createState() => _StartScreenState();
-} 
+}
 
 class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text('Welcome to Minesweeper'),
-          SizedBox(
+          const Text('Welcome to Minesweeper'),
+          const SizedBox(
             height: 30,
           ),
-        // choose level 
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Easy'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Standart'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Expert'),
+          ),
         ],
       ),
     );
