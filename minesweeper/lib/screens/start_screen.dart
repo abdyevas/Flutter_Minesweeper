@@ -25,15 +25,15 @@ class _StartScreenState extends State<StartScreen> {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: const Text('Easy'),
+            child: const Text('Easy'), // 8 x 8 - 10 
           ),
           ElevatedButton(
             onPressed: () {},
-            child: const Text('Standart'),
+            child: const Text('Standart'), // 16 x 16 - 40 
           ),
           ElevatedButton(
             onPressed: () {},
-            child: const Text('Expert'),
+            child: const Text('Expert'), // 16 x 30 - 99
           ),
         ],
       ),
