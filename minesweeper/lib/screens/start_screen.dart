@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatefulWidget {
-  const StartScreen({super.key, required this.switchScreen});
+  const StartScreen({super.key});//, required this.switchScreen});
 
-  final void Function(bool isOnePlayer) switchScreen;
+  // final void Function(bool isOnePlayer) switchScreen;
 
   @override
   State<StartScreen> createState() => _StartScreenState();
