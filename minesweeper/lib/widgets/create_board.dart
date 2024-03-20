@@ -2,11 +2,9 @@ import 'dart:math';
 
 List<List<int>> initializeBoard() {
   List<List<int>> board = [];
-  List<List<bool>> revealed = [];
 
   for (int i = 0; i < 10; i++) {
     board.add(List.generate(10, (j) => 0));
-    revealed.add(List.generate(10, (j) => false));
   }
 
   return board;
