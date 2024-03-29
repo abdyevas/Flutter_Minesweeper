@@ -13,14 +13,14 @@ class Minesweeper extends StatefulWidget {
 class _MinesweeperState extends State<Minesweeper> {
   List<List<int>> board = [];
   List<List<bool>> revealed = [];
-  int numMines = 20;
+  int numMines = 10;
 
   @override
   void initState() {
     super.initState();
     initializeBoard();
-    placeMines(board, numMines, 10, 10);
-    calculateNeighbors(board, 10, 10);
+    placeMines(board, numMines, 8, 8);
+    calculateNeighbors(board, 8, 8);
   }
 
   @override
@@ -89,11 +89,12 @@ class _MinesweeperState extends State<Minesweeper> {
     });
   }
 }
+
 List<List<int>> initializeBoard() {
   List<List<int>> board = [];
 
-  for (int i = 0; i < 10; i++) {
-    board.add(List.generate(10, (j) => 0));
+  for (int i = 0; i < 8; i++) {
+    board.add(List.generate(8, (j) => 0));
   }
 
   return board;

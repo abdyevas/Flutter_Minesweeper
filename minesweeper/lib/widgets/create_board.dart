@@ -3,8 +3,8 @@ import 'dart:math';
 List<List<int>> initializeBoard() {
   List<List<int>> board = [];
 
-  for (int i = 0; i < 10; i++) {
-    board.add(List.generate(10, (j) => 0));
+  for (int i = 0; i < 8; i++) {
+    board.add(List.generate(8, (j) => 0));
   }
 
   return board;
