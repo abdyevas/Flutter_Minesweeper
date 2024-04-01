@@ -1,15 +1,5 @@
 import 'dart:math';
 
-List<List<int>> initializeBoard() {
-  List<List<int>> board = [];
-
-  for (int i = 0; i < 8; i++) {
-    board.add(List.generate(8, (j) => 0));
-  }
-
-  return board;
-}
-
 void placeMines(List<List<int>> board, int numMines, int x, int y) {
   int minesPlaced = 0;
   Random random = Random();
@@ -31,10 +21,10 @@ void calculateNeighbors(List<List<int>> board, int x, int y) {
       if (board[i][j] == 0) {
         int minesCount = 0;
 
-        for (int x = -1; x <= 1; x++) {
-          for (int y = -1; y <= 1; y++) {
-            int neighborRow = i + x;
-            int neighborCol = j + y;
+        for (int k = -1; k <= 1; k++) {
+          for (int m = -1; m <= 1; m++) {
+            int neighborRow = i + k;
+            int neighborCol = j + m;
 
             if (neighborRow >= 0 &&
                 neighborRow < x &&
