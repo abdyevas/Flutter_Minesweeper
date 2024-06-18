@@ -57,12 +57,14 @@ class _MinesweeperState extends State<Minesweeper> {
                         ),
                         child: Center(
                           child: board[rowIndex][colIndex] > -1
-                              ? Text(
-                                  board[rowIndex][colIndex].toString(),
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                )
+                              ? board[rowIndex][colIndex] != 0
+                                  ? Text(
+                                      board[rowIndex][colIndex].toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  : const Text('')
                               : Image.asset(
                                   'assets/images/mine_icon.png',
                                   width: 20,
