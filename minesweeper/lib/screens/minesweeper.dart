@@ -91,8 +91,20 @@ class _MinesweeperState extends State<Minesweeper> {
   }
 
   void revealCell(int rowIndex, int colIndex) {
-    setState(() {
-      revealed[rowIndex][colIndex] = true;
-    });
+    if (board[rowIndex][colIndex] == -1) {
+      setState(() {
+        revealed[rowIndex][colIndex] = true;
+      });
+    }
+    else {
+      revealNeighbors(rowIndex, colIndex);
+    }
+  }
+
+  void revealNeighbors(int rowIndex, int colIndex) {
+    if (rowIndex < 0 || rowIndex >= 8 || colIndex < 0 || colIndex >= 8 || revealed[rowIndex][colIndex]) {
+      return; 
+    }
+
   }
 }
