@@ -51,7 +51,7 @@ class _MinesweeperState extends State<Minesweeper> {
                               color: const Color.fromARGB(255, 54, 54, 54)),
                           color: revealed[rowIndex][colIndex]
                               ? board[rowIndex][colIndex] == -1
-                                  ? Colors.red
+                                  ? const Color.fromARGB(255, 207, 24, 24)
                                   : const Color.fromARGB(255, 8, 29, 58)
                               : const Color.fromARGB(255, 78, 110, 167),
                         ),
@@ -108,6 +108,7 @@ class _MinesweeperState extends State<Minesweeper> {
         revealed[rowIndex][colIndex]) {
       return;
     }
+
     setState(() {
       revealed[rowIndex][colIndex] = true;
     });
