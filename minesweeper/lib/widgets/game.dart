@@ -16,7 +16,7 @@ class _Game extends State<Game> {
 
   @override
   void initState() {
-    activeScreen = StartScreen();//switchScreen: startGame);
+    activeScreen = const StartScreen();//switchScreen: startGame);
     super.initState();
   }
 

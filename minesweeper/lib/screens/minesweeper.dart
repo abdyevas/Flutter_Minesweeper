@@ -112,6 +112,7 @@ class _MinesweeperState extends State<Minesweeper> {
     setState(() {
       revealed[rowIndex][colIndex] = true;
     });
+    
     if (board[rowIndex][colIndex] != 0) {
       return;
     }

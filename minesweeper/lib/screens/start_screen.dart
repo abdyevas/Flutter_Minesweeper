@@ -23,7 +23,7 @@ class _StartScreenState extends State<StartScreen> {
             'Welcome to Minesweeper',
             style: TextStyle(
               fontSize: 30,
-              color: Colors.amber,
+              color: Color.fromARGB(255, 220, 181, 62),
             ),
           ),
           const SizedBox(
