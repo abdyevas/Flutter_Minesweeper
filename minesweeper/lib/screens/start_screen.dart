@@ -19,10 +19,10 @@ class _StartScreenState extends State<StartScreen> {
             height: 20,
           ),
           const Text(
-            'Welcome to Minesweeper',
+            'Minesweeper',
             style: TextStyle(
               fontSize: 30,
-              color: Color.fromARGB(255, 220, 181, 62),
+              color: Colors.white,
             ),
           ),
           const SizedBox(
